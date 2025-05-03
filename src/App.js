@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Parent from './Parent';
+import { useState } from 'react';
 function App() {
+  const names = [{parentName: "Sumit", childName: "Raman"}, {parentName: "Amit", childName: "Rahul"}];
+  const [namesViaState, setNamesViaState] = useState(names); // [
+  const addName = () =>{
+    // names.push({parentName: "Rohit", childName: "Raj"});
+    setNamesViaState([...namesViaState, {parentName: "Rohit", childName: "Raj"}]);
+    console.log(names);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Hello World!
+      {/* <Parent parentName = "Sumit" childName = "Raman"/>
+      <Parent parentName = "Amit" childName = "Rahul"/>
+      <Parent parentName = "Amit" childName = "Rahul"/> */}
+      {namesViaState.map((name, index) =>{
+        return <Parent parentName = {name.parentName} childName = {name.childName} key ={index}/>
+      })}
+      <button onClick={addName}>Click me</button>
     </div>
   );
 }
