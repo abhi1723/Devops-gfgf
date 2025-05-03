@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  tools {
+    nodejs "NodeJS-18" // Only if you've set up NodeJS tool in Jenkins
+  }
+
   stages {
     stage('Install Dependencies') {
       steps {
