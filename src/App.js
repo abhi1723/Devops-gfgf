@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <div>
-      Hello World Latest! from Abhishek Kumar Singh
+      Hello World Latest! from Abhishek Kumar Singh 
       {/* <Parent parentName = "Sumit" childName = "Raman"/>
       <Parent parentName = "Amit" childName = "Rahul"/>
       <Parent parentName = "Amit" childName = "Rahul"/> */}
